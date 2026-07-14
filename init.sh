@@ -68,7 +68,7 @@ trap 'error "script killed"' SIGINT SIGQUIT
     $PHP_BINARY artisan down
 }
 
-msg "Running: ${c_m}composer installl --no-dev"
+msg "Running: ${c_m}composer install --no-dev"
 $PHP_BINARY "$(type -P composer)" install --no-interaction --no-dev || error "${c_m}composer install --no-interaction --no-dev$c_w exited with an error status"
 
 while read -r; do
