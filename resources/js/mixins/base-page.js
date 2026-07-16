@@ -64,7 +64,7 @@ export default {
                 this.updateMetadata(response.data);
             }).catch((error) => {
                 console.log("error fetching metadata");
-                this.updateMetadata({ title: appName, description: "", keywords: "" });
+                this.updateMetadata({ title: this.$store.getters.getAppName, description: "", keywords: "" });
             });
         }
     },
