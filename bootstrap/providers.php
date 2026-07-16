@@ -1,7 +1,11 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use Spatie\Newsletter\NewsletterServiceProvider;
+use Intervention\Image\ImageServiceProvider;
+
 return [
-    App\Providers\AppServiceProvider::class,
-    Spatie\Newsletter\NewsletterServiceProvider::class,
-    Intervention\Image\ImageServiceProvider::class,
+    AppServiceProvider::class,
+    NewsletterServiceProvider::class,
+    ImageServiceProvider::class,
 ];
