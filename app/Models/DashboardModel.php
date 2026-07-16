@@ -280,7 +280,7 @@ class DashboardModel extends Model
             }
 
             // Load and scale the image
-            $image = Image::read($file);
+            $image = Image::decode($file);
 
             if ($max_width > 0 || $max_height > 0) {
                 $new_image_size = self::maxImageSize($max_width, $max_height, $image->width(), $image->height());
@@ -305,7 +305,7 @@ class DashboardModel extends Model
             $base_thumb_filename = $thumb_directory . $this->id . '-' . $name . '.';
 
             // Load and scale the thumbnail
-            $thumb = Image::read($file);
+            $thumb = Image::decode($file);
             $new_thumb_size = self::maxImageSize(800, 600, $thumb->width(), $thumb->height());
 
             if (!is_null($new_thumb_size[0]) || !is_null($new_thumb_size[1])) {

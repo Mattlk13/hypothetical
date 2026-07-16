@@ -531,7 +531,7 @@ class DashboardController extends Controller implements HasMiddleware
             $user = User::find(Auth::id());
 
             if ($user !== null) {
-                $image = Image::read($request->file('file'));
+                $image = Image::decode($request->file('file'));
                 $max_width = User::$profile_image_max['width'];
                 $max_height = User::$profile_image_max['height'];
 
